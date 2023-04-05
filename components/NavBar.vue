@@ -1,7 +1,7 @@
 <template>
   <nav class="border-gray-200 bg-white">
     <div
-      class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
+      class="container mx-auto flex flex-wrap items-center justify-between p-4"
     >
       <NuxtLink to="/" class="flex items-center">
         <img src="/img/logo.svg" class="mr-3 h-8" alt="CryptoLister" />
