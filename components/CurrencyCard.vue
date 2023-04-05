@@ -7,10 +7,9 @@
       class="flex-grow-1 relative flex h-full w-full flex-col justify-between rounded-md bg-white p-4 shadow-lg"
     >
       <div class="flex gap-1">
-        <div class="grow">
-          <h2 class="text-xl font-bold">{{ currency.name }}</h2>
-          <h3 class="text-sm font-bold">
-            Price:
+        <div class="grow text-zinc-700">
+          <h2 class="text-xl">{{ currency.name }}</h2>
+          <h3 class="mt-2 text-sm font-bold">
             {{ store.getPriceFormatted(currency) }}
           </h3>
         </div>

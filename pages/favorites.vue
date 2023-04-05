@@ -1,27 +1,28 @@
 <template>
-  <div class="container mx-auto px-4 py-6">
-    <h1 class="mb-6 flex items-center gap-2 text-3xl font-bold">
-      <span>Favorites</span>
-      <span
-        class="inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-red-500 text-xs font-bold text-white"
-      >
-        {{ store.favorites.length }}
-      </span>
-    </h1>
-    <CurrencyList :currency-list="store.favoritesList">
-      <template #no-data-header>Favorites List is Currently Empty</template>
-      <template #cta>
-        <NuxtLink to="/" class="btn btn-primary">
-          <button
-            type="button"
-            class="mt-3 rounded-lg border border-red-700 px-5 py-2.5 text-center text-sm font-medium text-red-700 hover:bg-red-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-red-300"
-          >
-            Find Favorites
-          </button>
-        </NuxtLink>
-      </template>
-    </CurrencyList>
-  </div>
+  <h1 class="mb-6 flex items-center gap-2 text-3xl font-bold">
+    <span>Favorites</span>
+    <span
+      class="inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-red-500 text-xs font-bold text-white"
+    >
+      {{ store.favorites.length }}
+    </span>
+  </h1>
+  <CurrencyList
+    :is-loading="store.isLoading"
+    :currency-list="store.favoritesList"
+  >
+    <template #no-data-header>Your Favorites List is Currently Empty</template>
+    <template #cta>
+      <NuxtLink to="/" class="btn btn-primary">
+        <button
+          type="button"
+          class="mt-3 rounded-lg border border-red-700 px-5 py-2.5 text-center text-sm font-medium text-red-700 hover:bg-red-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-red-300"
+        >
+          Find Favorites
+        </button>
+      </NuxtLink>
+    </template>
+  </CurrencyList>
 </template>
 
 <script setup>

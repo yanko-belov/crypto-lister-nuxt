@@ -1,5 +1,6 @@
 <template>
-  <template v-if="hasCurrencies">
+  <CurrencyListLoader v-if="props.isLoading" />
+  <template v-else-if="hasCurrencies">
     <FilterInput v-model="filter" />
     <div
       class="mt-6 grid grid-cols-1 gap-6 min-[530px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
@@ -27,9 +28,13 @@
 <script lang="ts" setup>
 const filter = ref("");
 
-const props = withDefaults(defineProps<{ currencyList: ICurrency[] }>(), {
-  currencyList: [] as ICurrency[],
-});
+const props = withDefaults(
+  defineProps<{ currencyList: ICurrency[]; isLoading: boolean }>(),
+  {
+    currencyList: [] as ICurrency[],
+    isLoading: false,
+  }
+);
 
 const hasCurrencies = computed(() => currencyListFiltered.value.length > 0);
 

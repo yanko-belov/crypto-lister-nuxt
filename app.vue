@@ -1,8 +1,9 @@
 <template>
   <NavBar />
-  <template v-if="store.isLoading" />
-  <LoadingError v-else-if="store.hasError" @reload-data="reloadData" />
-  <NuxtPage v-else />
+  <div class="container mx-auto px-4 py-6">
+    <LoadingError v-if="store.hasError" @reload-data="reloadData" />
+    <NuxtPage v-else />
+  </div>
 </template>
 <script setup lang="ts">
 import { useCurrencyStore } from "~/store/currencyStore";
@@ -10,7 +11,7 @@ const store = useCurrencyStore();
 
 useHead({
   bodyAttrs: {
-    class: "bg-gray-200",
+    class: "bg-[#F6F7EB]",
   },
 });
 const reloadData = () => store.loadList();
