@@ -39,16 +39,20 @@ export const useCurrencyStore = defineStore("currency", {
     lastUpdated: new Date("1970-01-01"),
   }),
   getters: {
-    currencyFormatter() {
-      return new Intl.NumberFormat("en-US", {
+    currencyFormatter: () =>
+      new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      });
-    },
+      }),
+    favoritesList: (state) =>
+      state.list.filter((currency) =>
+        state.favorites.includes(currency.symbol.toLowerCase())
+      ),
   },
   actions: {
     async getList() {
       this.isLoading = true;
+      this.hasError = false;
       try {
         // const response = await $fetch("/api/list");
         const response = listData;
@@ -60,8 +64,7 @@ export const useCurrencyStore = defineStore("currency", {
         this.isLoading = false;
       }
     },
-
-    getPriceFormatted(currency: ICurrency) {
+    getPriceFormatted(currency: ICurrency): string {
       return this.currencyFormatter.format(currency.quote.USD.price);
     },
   },

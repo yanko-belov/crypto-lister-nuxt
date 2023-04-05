@@ -8,7 +8,7 @@ const store = useCurrencyStore();
 
 useHead({
   bodyAttrs: {
-    class: "bg-gray-100",
+    class: "bg-gray-200",
   },
 });
 

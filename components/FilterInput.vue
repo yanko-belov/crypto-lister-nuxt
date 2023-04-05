@@ -6,7 +6,7 @@
     >
       <svg
         aria-hidden="true"
-        class="h-5 w-5 text-gray-500 dark:text-gray-400"
+        class="h-5 w-5 text-gray-500"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
