@@ -6,14 +6,14 @@
     <div
       class="flex-grow-1 relative flex h-full w-full flex-col rounded-md bg-white p-4 shadow-lg"
     >
-      <div class="flex items-center">
+      <div class="flex gap-1">
         <div class="grow">
           <h2 class="text-xl font-bold">{{ currency.name }}</h2>
           <h3 class="grow text-sm font-bold">Price: {{ priceFormatted }}</h3>
         </div>
         <img
           class="h-10 w-10"
-          src="https://cryptologos.cc/logos/bitcoin-btc-logo.png"
+          :src="`/public/img/svg-crypto-logos/${currency.symbol.toLowerCase()}.svg`"
           alt="Bitcoin Logo"
         />
       </div>
@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{ currency: any }>();
+const props = defineProps<{ currency: ICurrency }>();
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
@@ -36,5 +36,3 @@ const priceFormatted = computed(() =>
   formatter.format(props.currency.quote["USD"].price)
 );
 </script>
-
-<style scoped></style>
