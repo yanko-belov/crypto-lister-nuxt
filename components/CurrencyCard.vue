@@ -9,7 +9,10 @@
       <div class="flex gap-1">
         <div class="grow">
           <h2 class="text-xl font-bold">{{ currency.name }}</h2>
-          <h3 class="grow text-sm font-bold">Price: {{ priceFormatted }}</h3>
+          <h3 class="grow text-sm font-bold">
+            Price:
+            {{ store.getPriceFormatted(currency) }}
+          </h3>
         </div>
         <img
           class="h-10 w-10"
@@ -27,12 +30,8 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{ currency: ICurrency }>();
-const formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-});
-const priceFormatted = computed(() =>
-  formatter.format(props.currency.quote["USD"].price)
-);
+import { useCurrencyStore } from "~/store/currencyStore";
+
+const store = useCurrencyStore();
+defineProps<{ currency: ICurrency }>();
 </script>

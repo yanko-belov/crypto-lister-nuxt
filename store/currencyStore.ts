@@ -38,6 +38,14 @@ export const useCurrencyStore = defineStore("currency", {
     isLoading: false,
     lastUpdated: new Date("1970-01-01"),
   }),
+  getters: {
+    currencyFormatter() {
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      });
+    },
+  },
   actions: {
     async getList() {
       this.isLoading = true;
@@ -51,6 +59,10 @@ export const useCurrencyStore = defineStore("currency", {
       } finally {
         this.isLoading = false;
       }
+    },
+
+    getPriceFormatted(currency: ICurrency) {
+      return this.currencyFormatter.format(currency.quote.USD.price);
     },
   },
 });
