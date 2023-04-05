@@ -15,7 +15,7 @@
         </div>
         <img
           class="h-10 w-10"
-          :src="`/img/svg-crypto-logos/${currency.symbol.toLowerCase()}.svg`"
+          :src="`/img/svg-crypto-logos/${symbol}.svg`"
           alt="Bitcoin Logo"
         />
       </div>
