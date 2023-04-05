@@ -1,6 +1,8 @@
 <template>
   <NavBar />
-  <NuxtPage />
+  <template v-if="store.isLoading" />
+  <LoadingError v-else-if="store.hasError" @reload-data="reloadData" />
+  <NuxtPage v-else />
 </template>
 <script setup lang="ts">
 import { useCurrencyStore } from "~/store/currencyStore";
@@ -11,6 +13,7 @@ useHead({
     class: "bg-gray-200",
   },
 });
+const reloadData = () => store.loadList();
 
-store.getList();
+store.loadList();
 </script>

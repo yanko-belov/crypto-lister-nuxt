@@ -50,7 +50,7 @@ export const useCurrencyStore = defineStore("currency", {
       ),
   },
   actions: {
-    async getList() {
+    async loadList() {
       this.isLoading = true;
       this.hasError = false;
       try {
