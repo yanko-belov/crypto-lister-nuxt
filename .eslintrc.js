@@ -18,5 +18,13 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["@typescript-eslint"],
-  rules: {},
+  overrides: [
+    {
+      files: ["layouts/*.vue", "pages/**/*.vue"],
+      rules: { "vue/multi-word-component-names": "off" },
+    },
+  ],
+  rules: {
+    "no-undef": "off",
+  },
 };
