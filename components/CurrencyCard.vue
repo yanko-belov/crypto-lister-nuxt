@@ -28,7 +28,7 @@
           height="30px"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
-          @click.stop.prevent="removeFromFavorites"
+          @click.stop.prevent="store.removeFromFavorites(symbol)"
         >
           <path
             clip-rule="evenodd"
@@ -46,7 +46,7 @@
           height="30px"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
-          @click.stop.prevent="addToFavorites"
+          @click.stop.prevent="store.addToFavorites(symbol)"
         >
           <path
             stroke-linecap="round"
@@ -84,11 +84,4 @@ const props = defineProps<{ currency: ICurrency }>();
 const symbol = computed(() => props.currency.symbol.toLowerCase());
 
 const isFavorite = computed(() => store.favorites.includes(symbol.value));
-
-const removeFromFavorites = () => {
-  store.favorites = store.favorites.filter((s) => s !== symbol.value);
-};
-const addToFavorites = () => {
-  store.favorites.push(symbol.value);
-};
 </script>

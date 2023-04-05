@@ -67,5 +67,12 @@ export const useCurrencyStore = defineStore("currency", {
     getPriceFormatted(currency: ICurrency): string {
       return this.currencyFormatter.format(currency.quote.USD.price);
     },
+    removeFromFavorites(symbol: string) {
+      symbol = symbol.toLowerCase();
+      this.favorites = this.favorites.filter((s) => s !== symbol);
+    },
+    addToFavorites(symbol: string) {
+      this.favorites.push(symbol.toLowerCase());
+    },
   },
 });
