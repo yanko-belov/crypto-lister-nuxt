@@ -42,8 +42,8 @@ export const useCurrencyStore = defineStore("currency", {
     async getList() {
       this.isLoading = true;
       try {
-        const response = await $fetch("/api/list");
-        // const response = listData;
+        // const response = await $fetch("/api/list");
+        const response = listData;
         this.list = response.data as ICurrency[];
         this.lastUpdated = new Date(response.timestamp);
       } catch (error) {
