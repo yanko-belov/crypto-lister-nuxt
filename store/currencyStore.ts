@@ -27,6 +27,7 @@ export const useCurrencyStore = defineStore("currency", {
       state.list.filter((currency) =>
         state.favorites.includes(currency.symbol)
       ),
+    symbolWhiteList: (state) => state.list.map((currency) => currency.symbol),
   },
   actions: {
     async loadList() {
@@ -46,10 +47,17 @@ export const useCurrencyStore = defineStore("currency", {
       return this.currencyFormatter.format(currency.quote.USD.price);
     },
     removeFromFavorites(symbol: string) {
-      this.favorites = this.favorites.filter((s) => s !== symbol);
+      if (this.favorites.includes(symbol)) {
+        this.favorites = this.favorites.filter((s) => s !== symbol);
+      }
     },
     addToFavorites(symbol: string) {
-      this.favorites.push(symbol);
+      if (
+        !this.favorites.includes(symbol) &&
+        this.symbolWhiteList.includes(symbol)
+      ) {
+        this.favorites.push(symbol);
+      }
     },
   },
 });
