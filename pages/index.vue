@@ -3,7 +3,7 @@
   <CurrencyList :is-loading="store.isLoading" :currency-list="store.list" />
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { useCurrencyStore } from "~/store/currencyStore";
 
 const store = useCurrencyStore();

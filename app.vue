@@ -15,7 +15,7 @@
     <NuxtPage v-else />
   </div>
 </template>
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useCurrencyStore } from "~/store/currencyStore";
 const store = useCurrencyStore();
 

@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { useCurrencyStore } from "~/store/currencyStore";
 
 const store = useCurrencyStore();
