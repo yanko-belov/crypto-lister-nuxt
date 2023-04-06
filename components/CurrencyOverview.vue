@@ -2,18 +2,23 @@
   <div class="mb-4 items-center justify-between sm:flex md:mt-6">
     <div class="flex items-center gap-3">
       <img
+        data-testid="logo"
         class="h-8 w-8"
         :src="`/img/svg-crypto-logos/${symbol}.svg`"
         alt="Logo"
       />
-      <h1 class="text-3xl font-bold">{{ currency.name }}</h1>
+      <h1 class="text-3xl font-bold" data-testid="name">
+        {{ currency.name }}
+      </h1>
     </div>
     <button
+      data-testid="toggle-favorite-button"
       type="button"
       class="mt-4 inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-center text-sm font-medium text-gray-900 focus:z-10 focus:outline-none sm:mt-0"
       @click.stop.prevent="toggleFavorite"
     >
       <img
+        data-testid="toggle-favorite-img"
         class="-ml-1 mr-2 h-4 w-4"
         :src="`/img/icons/favorite-${isFavorite ? '' : 'in'}active.svg`"
         alt="Favorite toggle"
@@ -28,19 +33,19 @@
   >
     <div class="rounded-lg bg-white p-6 shadow-xl">
       <h2 class="mb-2 text-lg font-semibold text-gray-800">Current Price</h2>
-      <p class="text-2xl font-bold text-gray-800">
+      <p class="text-2xl font-bold text-gray-800" data-testid="current-price">
         {{ formattedPrice }}
       </p>
     </div>
     <div class="rounded-lg bg-white p-6 shadow-xl">
       <h2 class="mb-2 text-lg font-semibold text-gray-800">Market Cap</h2>
-      <p class="text-2xl font-bold text-gray-800">
+      <p class="text-2xl font-bold text-gray-800" data-testid="market-cap">
         {{ formatter.format(currency.quote.USD.market_cap) }}
       </p>
     </div>
     <div class="rounded-lg bg-white p-6 shadow-xl">
       <h2 class="mb-2 text-lg font-semibold text-gray-800">24h Volume</h2>
-      <p class="text-2xl font-bold text-gray-800">
+      <p class="text-2xl font-bold text-gray-800" data-testid="volume-24h">
         {{ formatter.format(currency.quote.USD.volume_24h) }}
       </p>
     </div>
@@ -48,7 +53,7 @@
       <h2 class="mb-2 text-lg font-semibold text-gray-800">
         Circulating Supply
       </h2>
-      <p class="text-2xl font-bold text-gray-800">
+      <p class="text-2xl font-bold text-gray-800" data-testid="current-supply">
         {{ formatter.format(currency.circulating_supply) }}
         {{ currency.symbol }}
       </p>
@@ -61,6 +66,7 @@
     <span
       v-for="tag in currency.tags"
       :key="`tag-${tag}`"
+      data-testid="tag"
       class="whitespace-nowrap rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800"
     >
       {{ tag }}
