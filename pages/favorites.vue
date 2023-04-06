@@ -1,5 +1,5 @@
 <template>
-  <h1 class="mb-6 flex items-center gap-2 text-3xl font-bold">
+  <h1 class="md-4 flex items-center gap-2 text-3xl font-bold md:mt-4">
     <span>Favorites</span>
     <FavoritesCounterIndicator />
   </h1>

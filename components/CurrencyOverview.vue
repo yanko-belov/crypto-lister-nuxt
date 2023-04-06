@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-6 items-center justify-between sm:flex">
+  <div class="mb-4 items-center justify-between sm:flex md:mt-6">
     <div class="flex items-center gap-3">
       <img
         class="h-8 w-8"
@@ -23,7 +23,9 @@
       <span v-else>Add to Favorites</span>
     </button>
   </div>
-  <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+  <div
+    class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-4 lg:gap-8"
+  >
     <div class="rounded-lg bg-white p-6 shadow-xl">
       <h2 class="mb-2 text-lg font-semibold text-gray-800">Current Price</h2>
       <p class="text-2xl font-bold text-gray-800">
@@ -53,7 +55,9 @@
     </div>
   </div>
 
-  <div class="mt-8 flex flex-wrap gap-3 rounded-lg bg-white p-6 shadow-xl">
+  <div
+    class="mt-4 flex flex-wrap gap-3 rounded-lg bg-white p-6 shadow-xl md:mt-6 lg:mt-8"
+  >
     <span
       v-for="tag in currency.tags"
       :key="`tag-${tag}`"
