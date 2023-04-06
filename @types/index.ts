@@ -7,4 +7,5 @@ interface ICurrency {
       price: number;
     };
   };
+  tags: string[];
 }
