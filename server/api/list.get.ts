@@ -1,8 +1,8 @@
 import { listCurrencies, handleApiError } from "~/server/crypto-api";
-import { CURRENCIES_WHITELIST } from "~/@types";
+import { CURRENCIES_WHITELIST } from "~/types";
 import type { H3Event } from "h3";
 import type { IListData } from "~/server/crypto-api/types";
-import type { ICurrency } from "~/@types";
+import type { ICurrency } from "~/types";
 
 const convertListCurrenciesData = (dataJson: IListData): ICurrency[] => {
   // Filter out currencies that are not in the whitelist

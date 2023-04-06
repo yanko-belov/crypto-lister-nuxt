@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { ICurrency } from "~/@types";
+import type { ICurrency } from "~/types";
 const filter = ref("");
 
 const props = withDefaults(

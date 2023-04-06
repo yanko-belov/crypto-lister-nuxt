@@ -38,7 +38,7 @@
 
 <script lang="ts" setup>
 import { useCurrency } from "~/composables/currency";
-import type { ICurrency } from "~/@types";
+import type { ICurrency } from "~/types";
 
 const props = defineProps<{ currency: ICurrency }>();
 
