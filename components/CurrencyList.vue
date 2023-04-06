@@ -14,15 +14,13 @@
       </NuxtLink>
     </div>
   </template>
-  <template v-else>
-    <div class="flex h-full flex-col items-center justify-center">
-      <img src="/img/data/no-data.svg" alt="No currencies found" class="w-96" />
-      <h1 class="mt-5 text-2xl font-bold">
-        <slot name="no-data-header">No Currencies Found</slot>
-      </h1>
-      <slot name="cta"></slot>
-    </div>
-  </template>
+  <div v-else class="flex h-full flex-col items-center justify-center">
+    <img src="/img/data/no-data.svg" alt="No currencies found" class="w-96" />
+    <h1 class="mt-5 text-2xl font-bold">
+      <slot name="no-data-header">No Currencies Found</slot>
+    </h1>
+    <slot name="cta"></slot>
+  </div>
 </template>
 
 <script lang="ts" setup>
