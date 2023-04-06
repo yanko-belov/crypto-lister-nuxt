@@ -2,7 +2,6 @@ import { defineStore } from "pinia";
 
 interface ICurrencyState {
   list: ICurrency[];
-  whitelist: string[];
   favorites: string[];
   isLoading: boolean;
   hasError: boolean;
@@ -12,26 +11,6 @@ interface ICurrencyState {
 export const useCurrencyStore = defineStore("currency", {
   state: (): ICurrencyState => ({
     list: [],
-    whitelist: [
-      "ada",
-      "avax",
-      "bnb",
-      "btc",
-      "busd",
-      "dai",
-      "doge",
-      "dot",
-      "eth",
-      "matic",
-      "shib",
-      "sol",
-      "trx",
-      "uni",
-      "usdc",
-      "usdt",
-      "wbtc",
-      "xrp",
-    ],
     favorites: [],
     hasError: false,
     isLoading: false,
