@@ -10,7 +10,7 @@
         <div class="grow text-zinc-700">
           <h2 class="text-xl">{{ currency.name }}</h2>
           <h3 class="mt-2 text-sm font-bold">
-            {{ store.getPriceFormatted(currency) }}
+            {{ formatPrice(currency) }}
           </h3>
         </div>
         <img
@@ -37,16 +37,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useCurrencyStore } from "~/store/currencyStore";
+import { useCurrency } from "~/composables/currency";
 
-const store = useCurrencyStore();
 const props = defineProps<{ currency: ICurrency }>();
 
-const symbol = computed(() => props.currency.symbol.toLowerCase());
-
-const isFavorite = computed(() => store.favorites.includes(symbol.value));
-const toggleFavorite = () =>
-  isFavorite.value
-    ? store.removeFromFavorites(symbol.value)
-    : store.addToFavorites(symbol.value);
+const { symbol, toggleFavorite, isFavorite, formatPrice } = useCurrency(
+  props.currency.symbol
+);
 </script>
