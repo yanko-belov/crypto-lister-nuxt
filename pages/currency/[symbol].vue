@@ -60,19 +60,18 @@ const route = useRoute();
 import { useCurrencyStore } from "~/store/currencyStore";
 
 const store = useCurrencyStore();
-// const { symbol } = (route.params?.symbol || "").toLowerCase();
-const symbol = "btc";
+const symbol = computed(() => route.params?.symbol.toLowerCase());
 
 const currency = computed(
   () =>
     store.list.find(
-      (currency) => currency.symbol.toLowerCase() === symbol
+      (currency) => currency.symbol.toLowerCase() === symbol.value
     ) as ICurrency
 );
 
-const isFavorite = computed(() => store.favorites.includes(symbol));
+const isFavorite = computed(() => store.favorites.includes(symbol.value));
 const toggleFavorite = () =>
   isFavorite.value
-    ? store.removeFromFavorites(symbol)
-    : store.addToFavorites(symbol);
+    ? store.removeFromFavorites(symbol.value)
+    : store.addToFavorites(symbol.value);
 </script>
