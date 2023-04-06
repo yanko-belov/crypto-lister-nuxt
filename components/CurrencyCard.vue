@@ -38,10 +38,9 @@
 
 <script lang="ts" setup>
 import { useCurrency } from "~/composables/currency";
-import type { ICurrency } from "~/types";
 
-const props = defineProps<{ currency: ICurrency }>();
+const props = defineProps<{ symbol: string }>();
 
 const { symbol, toggleFavorite, isFavorite, formattedPrice, currency } =
-  useCurrency(props.symbol);
+  useCurrency(props.symbol.toLowerCase());
 </script>
