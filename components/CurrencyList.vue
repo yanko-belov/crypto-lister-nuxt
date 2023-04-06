@@ -31,7 +31,7 @@ const filter = ref("");
 const props = withDefaults(
   defineProps<{ currencyList: ICurrency[]; isLoading: boolean }>(),
   {
-    currencyList: [] as ICurrency[],
+    currencyList: () => [],
     isLoading: false,
   }
 );
