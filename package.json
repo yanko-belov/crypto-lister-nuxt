@@ -8,7 +8,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix .",
-    "lint:scss": "stylelint ./src/**/*.{vue,scss,css} --fix",
+    "lint:scss": "stylelint ./**/*.{vue,scss,css} --fix",
     "format": "prettier .  --write"
   },
   "dependencies": {
