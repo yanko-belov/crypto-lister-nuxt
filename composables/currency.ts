@@ -1,21 +1,16 @@
 import type { ICurrency } from "~/types";
 import { useCurrencyStore } from "~/store/currencyStore";
-export function useCurrency(symbolParam: string) {
+export function useCurrency(symbol: string) {
   const store = useCurrencyStore();
 
-  const symbol = computed(() => symbolParam.toLowerCase());
-
-  const isFavorite = computed(() => store.favorites.includes(symbol.value));
+  const isFavorite = computed(() => store.favorites.includes(symbol));
   const toggleFavorite = () =>
     isFavorite.value
-      ? store.removeFromFavorites(symbol.value)
-      : store.addToFavorites(symbol.value);
+      ? store.removeFromFavorites(symbol)
+      : store.addToFavorites(symbol);
 
   const currency = computed(
-    () =>
-      store.list.find(
-        (currency) => currency.symbol.toLowerCase() === symbol.value
-      ) as ICurrency
+    () => store.list.find((currency) => currency.symbol === symbol) as ICurrency
   );
 
   const hasValidCurrency = computed(() => currency.value !== undefined);

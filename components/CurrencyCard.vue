@@ -45,5 +45,5 @@ import { useCurrency } from "~/composables/currency";
 const props = defineProps<{ symbol: string }>();
 
 const { symbol, toggleFavorite, isFavorite, formattedPrice, currency } =
-  useCurrency(props.symbol.toLowerCase());
+  useCurrency(props.symbol);
 </script>

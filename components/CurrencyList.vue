@@ -9,12 +9,12 @@
       <NuxtLink
         v-for="currency in currencyListFiltered"
         :key="`currency-${currency.id}`"
-        :to="`currency/${currency.symbol.toLowerCase()}`"
+        :to="`currency/${currency.symbol}`"
         data-testid="card-link"
       >
         <CurrencyCard
           data-testid="card"
-          :symbol="currency.symbol.toLowerCase()"
+          :symbol="currency.symbol"
           class="h-full"
         />
       </NuxtLink>
@@ -55,9 +55,8 @@ const hasCurrencies = computed(() => currencyListFiltered.value.length > 0);
 const currencyListFiltered = computed(() =>
   props.currencyList.filter((currency) => {
     const name = currency.name.toLowerCase();
-    const symbol = currency.symbol.toLowerCase();
     const filterValue = filter.value.toLowerCase();
-    return name.includes(filterValue) || symbol.includes(filterValue);
+    return name.includes(filterValue) || currency.symbol.includes(filterValue);
   })
 );
 </script>

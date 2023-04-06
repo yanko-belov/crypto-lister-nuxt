@@ -25,7 +25,7 @@ export const useCurrencyStore = defineStore("currency", {
       }),
     favouritesList: (state) =>
       state.list.filter((currency) =>
-        state.favorites.includes(currency.symbol.toLowerCase())
+        state.favorites.includes(currency.symbol)
       ),
   },
   actions: {
@@ -46,11 +46,10 @@ export const useCurrencyStore = defineStore("currency", {
       return this.currencyFormatter.format(currency.quote.USD.price);
     },
     removeFromFavorites(symbol: string) {
-      symbol = symbol.toLowerCase();
       this.favorites = this.favorites.filter((s) => s !== symbol);
     },
     addToFavorites(symbol: string) {
-      this.favorites.push(symbol.toLowerCase());
+      this.favorites.push(symbol);
     },
   },
 });
