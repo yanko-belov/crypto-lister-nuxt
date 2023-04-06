@@ -34,7 +34,7 @@ const mountCurrencyList = ({
   });
 };
 
-describe("Currency Card Test", () => {
+describe("Currency List Test", () => {
   let store = null;
 
   beforeEach(() => {
