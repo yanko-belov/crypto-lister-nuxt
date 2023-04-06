@@ -9,3 +9,4 @@ coverage
 dist
 .DS_Store
 .idea
+auto-imports.d.ts
