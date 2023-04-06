@@ -69,13 +69,11 @@
 </template>
 
 <script lang="ts" setup>
-import type { ICurrency } from "~/types";
 import { useCurrency } from "~/composables/currency";
-const props = defineProps<{ currency: ICurrency }>();
+const props = defineProps<{ symbol: string }>();
 
-const { symbol, toggleFavorite, isFavorite, formattedPrice } = useCurrency(
-  props.currency.symbol
-);
+const { symbol, toggleFavorite, isFavorite, formattedPrice, currency } =
+  useCurrency(props.symbol);
 
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",

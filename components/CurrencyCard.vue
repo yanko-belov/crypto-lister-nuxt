@@ -42,7 +42,6 @@ import type { ICurrency } from "~/types";
 
 const props = defineProps<{ currency: ICurrency }>();
 
-const { symbol, toggleFavorite, isFavorite, formattedPrice } = useCurrency(
-  props.currency.symbol
-);
+const { symbol, toggleFavorite, isFavorite, formattedPrice, currency } =
+  useCurrency(props.symbol);
 </script>

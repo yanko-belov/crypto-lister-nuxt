@@ -10,7 +10,7 @@
         :key="`currency-${currency.id}`"
         :to="`currency/${currency.symbol.toLowerCase()}`"
       >
-        <CurrencyCard :currency="currency" class="h-full" />
+        <CurrencyCard :symbol="currency.symbol.toLowerCase()" class="h-full" />
       </NuxtLink>
     </div>
   </template>

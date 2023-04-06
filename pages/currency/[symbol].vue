@@ -1,6 +1,6 @@
 <template>
   <CurrencyOverviewLoader v-if="store.isLoading" />
-  <CurrencyOverview v-else-if="hasValidCurrency" :currency="currency" />
+  <CurrencyOverview v-else-if="hasValidCurrency" :symbol="symbol" />
   <LoadingError v-else>
     <template #title>
       No currency is found with the symbol
@@ -28,7 +28,7 @@ const routesSymbol = computed(
   (): string => (router.currentRoute.value.params?.symbol as string) || ""
 );
 
-const { currency, hasValidCurrency } = useCurrency(routesSymbol.value);
+const { currency, hasValidCurrency, symbol } = useCurrency(routesSymbol.value);
 
 const goHome = () => router.push("/");
 </script>

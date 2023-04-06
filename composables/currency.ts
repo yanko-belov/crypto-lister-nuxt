@@ -11,10 +11,11 @@ export function useCurrency(symbolParam: string) {
       ? store.removeFromFavorites(symbol.value)
       : store.addToFavorites(symbol.value);
 
-  const currency = computed(() =>
-    store.list.find(
-      (currency) => currency.symbol.toLowerCase() === symbol.value
-    )
+  const currency = computed(
+    () =>
+      store.list.find(
+        (currency) => currency.symbol.toLowerCase() === symbol.value
+      ) as ICurrency
   );
 
   const hasValidCurrency = computed(() => currency.value !== undefined);
