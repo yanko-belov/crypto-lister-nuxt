@@ -10,23 +10,19 @@
         </span>
       </NuxtLink>
       <button
-        data-collapse-toggle="navbar-default"
         type="button"
         class="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
-        aria-controls="navbar-default"
-        aria-expanded="false"
+        @click="toggleMenu"
       >
         <span class="sr-only">Open main menu</span>
         <img class="h-5 w-5" src="/img/icons/burger-menu.svg" alt="Menu" />
       </button>
-      <div id="navbar-default" class="hidden w-full md:block md:w-auto">
+      <div class="w-full md:block md:w-auto" :class="{ hidden: !isMenuOpen }">
         <ul
           class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0"
         >
           <li>
-            <NuxtLink to="/" class="nav-link" aria-current="page">
-              Home
-            </NuxtLink>
+            <NuxtLink to="/" class="nav-link"> Home </NuxtLink>
           </li>
           <li>
             <NuxtLink to="/favorites" class="nav-link">
@@ -41,6 +37,16 @@
     </div>
   </nav>
 </template>
+
+<script lang="ts" setup>
+const route = useRoute();
+
+const isMenuOpen = ref(false);
+const toggleMenu = () => (isMenuOpen.value = !isMenuOpen.value);
+const closeMenu = () => (isMenuOpen.value = false);
+
+watch(() => route.fullPath, closeMenu);
+</script>
 
 <style lang="scss" scoped>
 .nav-link {
