@@ -1,6 +1,7 @@
 import { createError, sendError } from "h3";
 import type { H3Event } from "h3";
 import type { IListData } from "~/server/crypto-api/types";
+import { CURRENCIES_WHITELIST } from "~/@types";
 
 export const API_URL = "https://pro-api.coinmarketcap.com";
 
@@ -16,10 +17,6 @@ const callApi = (endpoint: string, options: RequestInit = {}) =>
 
 export const listCurrencies = (): Promise<Response> =>
   callApi("/v1/cryptocurrency/listings/latest");
-
-export const convertListCurrenciesData = (dataJson: IListData) => {
-  return { data: dataJson.data, timestamp: dataJson.status.timestamp };
-};
 
 export const handleApiError = (event: H3Event, response: Response) => {
   sendError(
