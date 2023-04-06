@@ -32,11 +32,7 @@
             <NuxtLink to="/favorites" class="nav-link">
               <div class="flex gap-2">
                 <span>Favorites</span>
-                <div
-                  class="inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-red-500 text-xs font-bold text-white"
-                >
-                  {{ store.favorites.length }}
-                </div>
+                <FavoritesCounterIndicator />
               </div>
             </NuxtLink>
           </li>
@@ -45,12 +41,6 @@
     </div>
   </nav>
 </template>
-
-<script setup>
-import { useCurrencyStore } from "~/store/currencyStore";
-
-const store = useCurrencyStore();
-</script>
 
 <style lang="scss" scoped>
 .nav-link {

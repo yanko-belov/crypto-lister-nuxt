@@ -1,11 +1,7 @@
 <template>
   <h1 class="mb-6 flex items-center gap-2 text-3xl font-bold">
     <span>Favorites</span>
-    <span
-      class="inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-red-500 text-xs font-bold text-white"
-    >
-      {{ store.favorites.length }}
-    </span>
+    <FavoritesCounterIndicator />
   </h1>
   <CurrencyList
     :is-loading="store.isLoading"
