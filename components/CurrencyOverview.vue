@@ -15,7 +15,7 @@
     >
       <img
         class="-ml-1 mr-2 h-4 w-4"
-        :src="`/img/icons/favorite-${isFavorite ? 'in' : ''}active.svg`"
+        :src="`/img/icons/favorite-${isFavorite ? '' : 'in'}active.svg`"
         alt="Favorite toggle"
         @click.stop.prevent="toggleFavorite"
       />

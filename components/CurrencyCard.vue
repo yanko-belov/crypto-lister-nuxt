@@ -22,7 +22,7 @@
       <div class="mt-4 flex items-center justify-between">
         <img
           class="h-8 w-8"
-          :src="`/img/icons/favorite-${isFavorite ? 'in' : ''}active.svg`"
+          :src="`/img/icons/favorite-${isFavorite ? '' : 'in'}active.svg`"
           alt="Favorite toggle"
           @click.stop.prevent="toggleFavorite"
         />
