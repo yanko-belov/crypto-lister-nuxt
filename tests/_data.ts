@@ -4,7 +4,7 @@ export const currencyList: ICurrency[] = [
   {
     id: 1,
     name: "BTC",
-    symbol: "BTC",
+    symbol: "btc",
     quote: {
       USD: {
         price: 28089.287104060542,
@@ -48,7 +48,7 @@ export const currencyList: ICurrency[] = [
   {
     id: 1027,
     name: "ETH",
-    symbol: "ETH",
+    symbol: "eth",
     quote: {
       USD: {
         price: 1879.106279804727,
@@ -91,7 +91,7 @@ export const currencyList: ICurrency[] = [
   {
     id: 825,
     name: "USDT",
-    symbol: "USDT",
+    symbol: "usdt",
     quote: {
       USD: {
         price: 1.0002832333026646,
@@ -117,7 +117,7 @@ export const currencyList: ICurrency[] = [
   {
     id: 1839,
     name: "BNB",
-    symbol: "BNB",
+    symbol: "bnb",
     quote: {
       USD: {
         price: 312.96169070135613,
