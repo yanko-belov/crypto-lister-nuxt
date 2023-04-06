@@ -30,7 +30,7 @@ import type { ICurrency } from "~/@types";
 const filter = ref("");
 
 const props = withDefaults(
-  defineProps<{ currencyList: ICurrency[]; isLoading: boolean }>(),
+  defineProps<{ currencyList: ICurrency[]; isLoading?: boolean }>(),
   {
     currencyList: () => [],
     isLoading: false,

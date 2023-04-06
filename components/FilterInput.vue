@@ -17,7 +17,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-withDefaults(defineProps<{ modelValue: string; disabled: boolean }>(), {
+withDefaults(defineProps<{ modelValue?: string; disabled?: boolean }>(), {
   modelValue: "",
   disabled: false,
 });
