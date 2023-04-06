@@ -4,7 +4,7 @@
       <img
         class="h-8 w-8"
         :src="`/img/svg-crypto-logos/${symbol}.svg`"
-        alt="Bitcoin Logo"
+        alt="Logo"
       />
       <h1 class="text-3xl font-bold">{{ currency.name }}</h1>
     </div>

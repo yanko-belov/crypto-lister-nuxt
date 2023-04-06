@@ -16,7 +16,7 @@
         <img
           class="h-10 w-10"
           :src="`/img/svg-crypto-logos/${symbol}.svg`"
-          alt="Bitcoin Logo"
+          alt="Logo"
         />
       </div>
       <div class="mt-4 flex items-center justify-between">
