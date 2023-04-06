@@ -11,7 +11,7 @@ const store = useCurrencyStore();
 
 useHead({
   bodyAttrs: {
-    class: "bg-[#F6F7EB]",
+    class: "bg-gray-200",
   },
 });
 const reloadData = () => store.loadList();
