@@ -20,6 +20,7 @@ import { useCurrencyStore } from "~/store/currencyStore";
 const store = useCurrencyStore();
 
 useHead({
+  title: "CryptoLoader - Nuxt 3 Demo App",
   bodyAttrs: {
     class: "bg-gray-200",
   },
