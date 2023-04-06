@@ -18,13 +18,15 @@ export function useCurrency(symbolParam: string) {
 
   const hasValidCurrency = computed(() => currency.value !== undefined);
 
-  const formatPrice = store.getPriceFormatted;
+  const formattedPrice = computed(() =>
+    hasValidCurrency ? store.getPriceFormatted(currency.value as ICurrency) : ""
+  );
 
   return {
     symbol,
     currency,
     isFavorite,
-    formatPrice,
+    formattedPrice,
     toggleFavorite,
     hasValidCurrency,
   };

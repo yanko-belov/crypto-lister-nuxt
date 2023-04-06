@@ -10,7 +10,7 @@
         <div class="grow text-zinc-700">
           <h2 class="text-xl">{{ currency.name }}</h2>
           <h3 class="mt-2 text-sm font-bold">
-            {{ formatPrice(currency) }}
+            {{ formattedPrice }}
           </h3>
         </div>
         <img
@@ -41,7 +41,7 @@ import { useCurrency } from "~/composables/currency";
 
 const props = defineProps<{ currency: ICurrency }>();
 
-const { symbol, toggleFavorite, isFavorite, formatPrice } = useCurrency(
+const { symbol, toggleFavorite, isFavorite, formattedPrice } = useCurrency(
   props.currency.symbol
 );
 </script>

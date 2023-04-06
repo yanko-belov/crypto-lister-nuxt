@@ -26,21 +26,30 @@
   <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
     <div class="rounded-lg bg-white p-6 shadow-xl">
       <h2 class="mb-2 text-lg font-semibold text-gray-800">Current Price</h2>
-      <p class="text-2xl font-bold text-gray-800">$60,000</p>
+      <p class="text-2xl font-bold text-gray-800">
+        {{ formattedPrice }}
+      </p>
     </div>
     <div class="rounded-lg bg-white p-6 shadow-xl">
       <h2 class="mb-2 text-lg font-semibold text-gray-800">Market Cap</h2>
-      <p class="text-2xl font-bold text-gray-800">$1.1 trillion</p>
+      <p class="text-2xl font-bold text-gray-800">
+        {{ formatter.format(currency.quote.USD.market_cap) }}
+      </p>
     </div>
     <div class="rounded-lg bg-white p-6 shadow-xl">
       <h2 class="mb-2 text-lg font-semibold text-gray-800">24h Volume</h2>
-      <p class="text-2xl font-bold text-gray-800">$50 billion</p>
+      <p class="text-2xl font-bold text-gray-800">
+        {{ formatter.format(currency.quote.USD.volume_24h) }}
+      </p>
     </div>
     <div class="rounded-lg bg-white p-6 shadow-xl">
       <h2 class="mb-2 text-lg font-semibold text-gray-800">
         Circulating Supply
       </h2>
-      <p class="text-2xl font-bold text-gray-800">18.6 BTC</p>
+      <p class="text-2xl font-bold text-gray-800">
+        {{ formatter.format(currency.circulating_supply) }}
+        {{ currency.symbol }}
+      </p>
     </div>
   </div>
 
@@ -59,7 +68,13 @@
 import { useCurrency } from "~/composables/currency";
 const props = defineProps<{ currency: ICurrency }>();
 
-const { symbol, toggleFavorite, isFavorite } = useCurrency(
+const { symbol, toggleFavorite, isFavorite, formattedPrice } = useCurrency(
   props.currency.symbol
 );
+
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  notation: "compact",
+  currency: "USD",
+});
 </script>
