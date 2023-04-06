@@ -1,5 +1,6 @@
 <template>
-  <CurrencyOverview v-if="hasValidCurrency" :currency="currency" />
+  <CurrencyOverviewLoader v-if="store.isLoading" />
+  <CurrencyOverview v-else-if="hasValidCurrency" :currency="currency" />
   <LoadingError v-else>
     <template #title>
       No currency is found with the symbol
@@ -19,7 +20,9 @@
 
 <script lang="ts" setup>
 import { useCurrency } from "~/composables/currency";
+import { useCurrencyStore } from "~/store/currencyStore";
 
+const store = useCurrencyStore();
 const router = useRouter();
 const routesSymbol = computed(
   (): string => (router.currentRoute.value.params?.symbol as string) || ""
