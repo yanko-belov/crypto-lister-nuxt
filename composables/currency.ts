@@ -21,6 +21,7 @@ export function useCurrency(symbolParam: string) {
   const formatPrice = store.getPriceFormatted;
 
   return {
+    symbol,
     currency,
     isFavorite,
     formatPrice,
