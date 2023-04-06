@@ -1,5 +1,7 @@
 {
-  "name": "nuxt-app",
+  "name": "CryltoLister - Nuxt 3",
+  "description": "CryltoLister is a demo app.",
+  "author": "Yanko Belov",
   "private": true,
   "scripts": {
     "build": "nuxt build",
