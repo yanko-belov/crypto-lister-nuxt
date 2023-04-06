@@ -28,7 +28,7 @@ const routesSymbol = computed(
   (): string => (router.currentRoute.value.params?.symbol as string) || ""
 );
 
-const { currency, hasValidCurrency, symbol } = useCurrency(routesSymbol.value);
+const { hasValidCurrency, symbol } = useCurrency(routesSymbol.value);
 
 const goHome = () => router.push("/");
 </script>
