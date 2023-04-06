@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import type { ICurrency } from "~/@types";
 
 interface ICurrencyState {
   list: ICurrency[];

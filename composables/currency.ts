@@ -1,3 +1,4 @@
+import type { ICurrency } from "~/@types";
 import { useCurrencyStore } from "~/store/currencyStore";
 export function useCurrency(symbolParam: string) {
   const store = useCurrencyStore();
