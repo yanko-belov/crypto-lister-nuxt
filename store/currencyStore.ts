@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import listData from "@/data-mock/list.json";
 
 interface ICurrencyState {
   list: ICurrency[];
@@ -54,8 +53,7 @@ export const useCurrencyStore = defineStore("currency", {
       this.isLoading = true;
       this.hasError = false;
       try {
-        // const response = await $fetch("/api/list");
-        const response = listData;
+        const response = await $fetch("/api/list");
         this.list = response.data as ICurrency[];
         this.lastUpdated = new Date(response.timestamp);
       } catch (error) {
