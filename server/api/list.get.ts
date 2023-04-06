@@ -16,7 +16,7 @@ const convertListCurrenciesData = (dataJson: IListData): ICurrency[] => {
     .map((currency) => ({
       id: currency.id,
       name: currency.symbol,
-      symbol: currency.symbol,
+      symbol: currency.symbol.toLowerCase(),
       quote: {
         USD: {
           price: currency.quote.USD.price,
