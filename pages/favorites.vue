@@ -5,7 +5,7 @@
   </h1>
   <CurrencyList
     :is-loading="store.isLoading"
-    :currency-list="store.favoritesList"
+    :currency-list="store.favouritesList"
   >
     <template #no-data-header>Your Favorites List is Currently Empty</template>
     <template #cta>
