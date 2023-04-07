@@ -18,14 +18,8 @@ describe("Currency Card Test", () => {
 
   test("test creation", async () => {
     const store = useCurrencyStore();
-    const {
-      symbol,
-      currency,
-      isFavorite,
-      formattedPrice,
-      toggleFavorite,
-      hasValidCurrency,
-    } = useCurrency(c.symbol);
+    const { symbol, currency, isFavorite, formattedPrice, hasValidCurrency } =
+      useCurrency(c.symbol);
 
     expect(store.favorites).toHaveLength(0);
     expect(symbol).toBe(c.symbol);
