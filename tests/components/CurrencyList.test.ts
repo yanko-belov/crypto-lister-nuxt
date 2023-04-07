@@ -1,4 +1,4 @@
-import { RouterLinkStub, mount } from "@vue/test-utils";
+import { mount, RouterLinkStub } from "@vue/test-utils";
 import CurrencyList from "~/components/CurrencyList.vue";
 import CurrencyCard from "~/components/CurrencyCard.vue";
 import CurrencyListLoader from "~/components/CurrencyListLoader.vue";
@@ -27,12 +27,10 @@ const mountCurrencyList = ({
       isLoading,
     },
     components: {
+      NuxtLink: RouterLinkStub,
       FilterInput,
       CurrencyCard,
       CurrencyListLoader,
-    },
-    stubs: {
-      NuxtLink: RouterLinkStub,
     },
   });
 };

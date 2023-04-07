@@ -11,3 +11,8 @@
     />
   </div>
 </template>
+
+<script lang="ts" setup>
+import CurrencyCardLoader from "~/components/CurrencyCardLoader.vue";
+import FilterInput from "~/components/FilterInput.vue";
+</script>
