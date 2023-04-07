@@ -42,4 +42,13 @@ describe("Currency Card Test", () => {
     expect(isFavorite.value).toBeTruthy();
     toggleFavorite();
   });
+
+  test("test invalid symbol", async () => {
+    const { isFavorite, hasValidCurrency, formattedPrice } =
+      useCurrency("something invalid");
+
+    expect(isFavorite.value).toBeFalsy();
+    expect(hasValidCurrency.value).toBeFalsy();
+    expect(formattedPrice.value).toBe("");
+  });
 });
