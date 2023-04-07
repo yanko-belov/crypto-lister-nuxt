@@ -1,5 +1,5 @@
 import type { ICurrency } from "~/types";
-import { useCurrencyStore } from "~/store/currencyStore";
+import { useCurrencyStore } from "~/store/currency";
 export function useCurrency(symbol: string) {
   const store = useCurrencyStore();
 

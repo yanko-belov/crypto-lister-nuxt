@@ -2,7 +2,7 @@ import { mount } from "@vue/test-utils";
 import CurrencyCard from "~/components/CurrencyCard.vue";
 import { currencyList } from "~/tests/_data";
 import { createTestingPinia } from "@pinia/testing";
-import { useCurrencyStore } from "~/store/currencyStore";
+import { useCurrencyStore } from "~/store/currency";
 import { setActivePinia } from "pinia";
 
 const currency = currencyList[0];

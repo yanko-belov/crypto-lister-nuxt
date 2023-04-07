@@ -1,6 +1,6 @@
 import { currencyList } from "~/tests/_data";
 import { createTestingPinia } from "@pinia/testing";
-import { useCurrencyStore } from "~/store/currencyStore";
+import { useCurrencyStore } from "~/store/currency";
 import { setActivePinia } from "pinia";
 import { useCurrency } from "~/composables/currency";
 

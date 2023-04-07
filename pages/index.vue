@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useCurrencyStore } from "~/store/currencyStore";
+import { useCurrencyStore } from "~/store/currency";
 
 const store = useCurrencyStore();
 </script>

@@ -20,7 +20,7 @@
 
 <script lang="ts" setup>
 import { useCurrency } from "~/composables/currency";
-import { useCurrencyStore } from "~/store/currencyStore";
+import { useCurrencyStore } from "~/store/currency";
 
 const store = useCurrencyStore();
 const router = useRouter();
