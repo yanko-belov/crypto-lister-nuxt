@@ -1,5 +1,5 @@
 <template>
-  <div class="group relative cursor-pointer">
+  <div class="group relative cursor-pointer" data-testid="currency-card">
     <div
       class="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-0 blur transition duration-300 group-hover:opacity-75"
     ></div>

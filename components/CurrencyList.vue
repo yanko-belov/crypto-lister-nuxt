@@ -1,7 +1,7 @@
 <template>
-  <CurrencyListLoader v-if="props.isLoading" data-testid="loader" />
+  <CurrencyListLoader v-if="props.isLoading" />
   <template v-else-if="hasCurrencies">
-    <FilterInput v-model="filter" data-testid="currency-filter" />
+    <FilterInput v-model="filter" />
     <div
       class="mt-4 grid grid-cols-1 gap-4 min-[530px]:grid-cols-2 md:mt-6 md:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5"
       data-testid="card-container"
@@ -10,13 +10,8 @@
         v-for="currency in currencyListFiltered"
         :key="`currency-${currency.id}`"
         :to="`currency/${currency.symbol}`"
-        data-testid="card-link"
       >
-        <CurrencyCard
-          data-testid="card"
-          :symbol="currency.symbol"
-          class="h-full"
-        />
+        <CurrencyCard :symbol="currency.symbol" class="h-full" />
       </NuxtLink>
     </div>
   </template>

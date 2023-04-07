@@ -7,6 +7,7 @@
       <img class="h-5 w-5" src="/img/icons/search.svg" alt="Search" />
     </div>
     <input
+      data-testid="filter-input"
       type="search"
       :disabled="disabled"
       class="block w-full rounded-lg border border-gray-300 p-4 pl-10 text-sm text-gray-900 focus:border-red-500 focus:ring-red-500"
