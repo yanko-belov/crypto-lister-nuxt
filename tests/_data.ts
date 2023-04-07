@@ -137,3 +137,8 @@ export const currencyList: ICurrency[] = [
     circulating_supply: 157887230.0545323,
   },
 ];
+
+export const listResponse = {
+  data: currencyList,
+  timestamp: "2023-04-05T10:41:24.799Z",
+};
