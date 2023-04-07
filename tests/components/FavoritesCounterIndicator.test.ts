@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import FavoritesCounterIndicator from "../components/FavoritesCounterIndicator.vue";
+import FavoritesCounterIndicator from "~/components/FavoritesCounterIndicator.vue";
 import { currencyList } from "~/tests/_data";
 import { createTestingPinia } from "@pinia/testing";
 import { useCurrencyStore } from "~/store/currencyStore";

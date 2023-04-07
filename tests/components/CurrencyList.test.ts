@@ -1,15 +1,15 @@
 import { RouterLinkStub, shallowMount } from "@vue/test-utils";
-import CurrencyList from "@/components/CurrencyList.vue";
-import CurrencyCard from "@/components/CurrencyCard.vue";
-import CurrencyListLoader from "@/components/CurrencyListLoader.vue";
-import FilterInput from "@/components/FilterInput.vue";
+import CurrencyList from "~/components/CurrencyList.vue";
+import CurrencyCard from "~/components/CurrencyCard.vue";
+import CurrencyListLoader from "~/components/CurrencyListLoader.vue";
+import FilterInput from "~/components/FilterInput.vue";
 
 import { currencyList as currencyListMocked } from "~/tests/_data";
 import { createTestingPinia } from "@pinia/testing";
 import { useCurrencyStore } from "~/store/currencyStore";
 import { setActivePinia } from "pinia";
 import { nextTick } from "vue";
-import { ICurrency } from "~/types";
+import type { ICurrency } from "~/types";
 
 const mountCurrencyList = ({
   currencyList,

@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import CurrencyCard from "../components/CurrencyCard.vue";
+import CurrencyCard from "~/components/CurrencyCard.vue";
 import { currencyList } from "~/tests/_data";
 import { createTestingPinia } from "@pinia/testing";
 import { useCurrencyStore } from "~/store/currencyStore";

@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import CurrencyOverview from "@/components/CurrencyOverview.vue";
+import CurrencyOverview from "~/components/CurrencyOverview.vue";
 
 import { currencyList } from "~/tests/_data";
 import { createTestingPinia } from "@pinia/testing";
