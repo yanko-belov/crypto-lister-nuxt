@@ -10,7 +10,7 @@ import { listResponse } from "~/tests/_data";
 vi.mock("axios");
 const mockedAxios = axios as Mocked<typeof axios>;
 
-describe("Test currency store", () => {
+describe("Currency Store Test", () => {
   beforeEach(() => {
     setActivePinia(
       createTestingPinia({ stubActions: false, createSpy: vi.fn })

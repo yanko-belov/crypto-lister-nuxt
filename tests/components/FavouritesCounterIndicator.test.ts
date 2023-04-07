@@ -12,7 +12,7 @@ const mountFavouritesCounterIndicator = () => {
   return mount(FavouritesCounterIndicator);
 };
 
-describe("Currency Card Test", () => {
+describe("Favourites Counter Indicator Test", () => {
   let store = null;
 
   beforeEach(() => {

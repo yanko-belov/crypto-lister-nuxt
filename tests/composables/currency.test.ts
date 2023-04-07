@@ -6,7 +6,7 @@ import { useCurrency } from "~/composables/currency";
 
 const c = currencyList[0];
 
-describe("Currency Card Test", () => {
+describe("Currency Composable Test", () => {
   let store = null;
 
   beforeEach(() => {
