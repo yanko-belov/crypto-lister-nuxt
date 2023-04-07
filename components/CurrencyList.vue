@@ -1,6 +1,6 @@
 <template>
   <CurrencyListLoader v-if="props.isLoading" />
-  <template v-else-if="hasCurrencies">
+  <template v-else-if="hasCurrencies || !isFilterEmpty">
     <FilterInput v-model="filter" />
     <div
       class="mt-4 grid grid-cols-1 gap-4 min-[530px]:grid-cols-2 md:mt-6 md:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5"
@@ -16,7 +16,7 @@
     </div>
   </template>
   <div
-    v-else
+    v-if="!hasCurrencies && !props.isLoading"
     data-testid="missing-data"
     class="flex h-full flex-col items-center justify-center"
   >
@@ -27,15 +27,29 @@
       class="w-96"
     />
     <h1 data-testid="missing-data-title" class="mt-5 text-2xl font-bold">
-      <slot name="no-data-header">No Currencies Found</slot>
+      <span v-if="!isFilterEmpty">
+        No Currencies Found with filter "{{ filter }}"
+      </span>
+      <slot v-else name="no-data-header">No Currencies Found</slot>
     </h1>
-    <slot name="cta"></slot>
+
+    <button
+      v-if="!isFilterEmpty"
+      type="button"
+      class="mt-3 rounded-lg border border-red-700 px-5 py-2.5 text-center text-sm font-medium text-red-700 hover:bg-red-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-red-300"
+      @click="clearFilter"
+    >
+      Clear filter
+    </button>
+    <slot v-else name="cta"></slot>
   </div>
 </template>
 
 <script lang="ts" setup>
 import type { ICurrency } from "~/types";
 const filter = ref("");
+const isFilterEmpty = computed(() => filter.value.length === 0);
+const clearFilter = () => (filter.value = "");
 
 const props = withDefaults(
   defineProps<{ currencyList: ICurrency[]; isLoading?: boolean }>(),
