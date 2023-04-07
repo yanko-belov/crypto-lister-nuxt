@@ -28,7 +28,7 @@
             <NuxtLink to="/favorites" class="nav-link">
               <div class="flex gap-2">
                 <span>Favorites</span>
-                <FavoritesCounterIndicator />
+                <FavouritesCounterIndicator />
               </div>
             </NuxtLink>
           </li>

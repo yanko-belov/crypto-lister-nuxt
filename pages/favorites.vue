@@ -1,7 +1,7 @@
 <template>
   <h1 class="md-4 flex items-center gap-2 text-3xl font-bold md:mt-4">
     <span>Favorites</span>
-    <FavoritesCounterIndicator />
+    <FavouritesCounterIndicator />
   </h1>
   <CurrencyList
     :is-loading="store.isLoading"
