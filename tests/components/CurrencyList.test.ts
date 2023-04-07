@@ -52,12 +52,12 @@ describe("Currency List Test", () => {
       currencyList: [],
       isLoading: false,
     });
-    expect(wrapper.get("[data-testid='missing-data']").exists()).toBeTruthy();
+    expect(wrapper.find("[data-testid='missing-data']").exists()).toBeTruthy();
     expect(
-      wrapper.get("[data-testid='missing-data-image']").exists()
+      wrapper.find("[data-testid='missing-data-image']").exists()
     ).toBeTruthy();
     expect(
-      wrapper.get("[data-testid='missing-data-title']").exists()
+      wrapper.find("[data-testid='missing-data-title']").exists()
     ).toBeTruthy();
   });
 
@@ -66,7 +66,7 @@ describe("Currency List Test", () => {
       currencyList: currencyListMocked,
       isLoading: true,
     });
-    expect(wrapper.get("[data-testid='loader']").exists()).toBeTruthy();
+    expect(wrapper.find("[data-testid='loader']").exists()).toBeTruthy();
   });
 
   test("test listing", async () => {
@@ -75,11 +75,13 @@ describe("Currency List Test", () => {
       isLoading: false,
     });
     expect(
-      wrapper.get("[data-testid='currency-filter']").exists()
+      wrapper.find("[data-testid='currency-filter']").exists()
     ).toBeTruthy();
-    expect(wrapper.get("[data-testid='card-container']").exists()).toBeTruthy();
-    expect(wrapper.get("[data-testid='card-link']").exists()).toBeTruthy();
-    expect(wrapper.get("[data-testid='card']").exists()).toBeTruthy();
+    expect(
+      wrapper.find("[data-testid='card-container']").exists()
+    ).toBeTruthy();
+    expect(wrapper.find("[data-testid='card-link']").exists()).toBeTruthy();
+    expect(wrapper.find("[data-testid='card']").exists()).toBeTruthy();
   });
 
   test("test filtering", async () => {

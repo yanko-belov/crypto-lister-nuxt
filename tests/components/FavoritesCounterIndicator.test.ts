@@ -32,18 +32,18 @@ describe("Currency Card Test", () => {
 
     // initial state
     expect(store.favorites).toHaveLength(0);
-    expect(wrapper.get("[data-testid='favorites-counter']").text()).toBe("0");
+    expect(wrapper.find("[data-testid='favorites-counter']").text()).toBe("0");
 
     store.addToFavorites(currency.symbol);
     await nextTick();
-    expect(wrapper.get("[data-testid='favorites-counter']").text()).toBe("1");
+    expect(wrapper.find("[data-testid='favorites-counter']").text()).toBe("1");
 
     store.addToFavorites(currency.symbol);
     await nextTick();
-    expect(wrapper.get("[data-testid='favorites-counter']").text()).toBe("1");
+    expect(wrapper.find("[data-testid='favorites-counter']").text()).toBe("1");
 
     store.removeFromFavorites(currency.symbol);
     await nextTick();
-    expect(wrapper.get("[data-testid='favorites-counter']").text()).toBe("0");
+    expect(wrapper.find("[data-testid='favorites-counter']").text()).toBe("0");
   });
 });

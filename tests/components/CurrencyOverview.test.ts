@@ -5,7 +5,6 @@ import { currencyList } from "~/tests/_data";
 import { createTestingPinia } from "@pinia/testing";
 import { useCurrencyStore } from "~/store/currencyStore";
 import { setActivePinia } from "pinia";
-import { nextTick } from "vue";
 
 const currency = currencyList[0];
 const mountCurrencyOverview = () => {
@@ -45,7 +44,7 @@ describe("Currency Overview Test", () => {
     );
     expect(wrapper.get("[data-testid='name']").text()).toBe(currency.name);
     expect(
-      wrapper.get("[data-testid='toggle-favorite-button']").exists()
+      wrapper.find("[data-testid='toggle-favorite-button']").exists()
     ).toBeTruthy();
     expect(
       wrapper.get("[data-testid='toggle-favorite-img']").attributes().src
@@ -79,8 +78,9 @@ describe("Currency Overview Test", () => {
     ).toBe(`/img/icons/favorite-inactive.svg`);
 
     // add to favorites
-    wrapper.get("[data-testid='toggle-favorite-button']").trigger("click");
-    await nextTick();
+    await wrapper
+      .get("[data-testid='toggle-favorite-button']")
+      .trigger("click");
     expect(store.favorites).toHaveLength(1);
     expect(
       store.favorites.includes(currency.symbol.toLowerCase())
@@ -90,8 +90,9 @@ describe("Currency Overview Test", () => {
     ).toBe(`/img/icons/favorite-active.svg`);
 
     // remove from favorites
-    wrapper.get("[data-testid='toggle-favorite-button']").trigger("click");
-    await nextTick();
+    await wrapper
+      .get("[data-testid='toggle-favorite-button']")
+      .trigger("click");
     expect(store.favorites).toHaveLength(0);
     expect(store.favorites.includes(currency.symbol.toLowerCase())).toBeFalsy();
     expect(
