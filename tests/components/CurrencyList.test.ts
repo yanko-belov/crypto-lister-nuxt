@@ -6,7 +6,6 @@ import FilterInput from "~/components/FilterInput.vue";
 
 import { currencyList as currencyListMocked } from "~/tests/_data";
 import { createTestingPinia } from "@pinia/testing";
-import { useCurrencyStore } from "~/store/currencyStore";
 import { setActivePinia } from "pinia";
 import { nextTick } from "vue";
 import type { ICurrency } from "~/types";
@@ -35,12 +34,8 @@ const mountCurrencyList = ({
 };
 
 describe("Currency List Test", () => {
-  let store = null;
-
   beforeEach(() => {
     setActivePinia(createTestingPinia({ stubActions: false }));
-
-    store = useCurrencyStore();
   });
 
   test("component exist", async () => {
