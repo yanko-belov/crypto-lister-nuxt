@@ -48,7 +48,7 @@ describe("Currency Card Test", () => {
     ).toBeTruthy();
   });
 
-  test("test favorite", async () => {
+  test("favorite toggle", async () => {
     const wrapper = mountCurrencyCard();
     const store = useCurrencyStore();
 

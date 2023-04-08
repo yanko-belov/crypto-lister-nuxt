@@ -26,7 +26,7 @@ describe("Favourites Counter Indicator Test", () => {
     expect(FavouritesCounterIndicator).toBeTruthy();
   });
 
-  test("test favorite", async () => {
+  test("add and remove from favourites", async () => {
     const wrapper = mountFavouritesCounterIndicator();
     const store = useCurrencyStore();
 

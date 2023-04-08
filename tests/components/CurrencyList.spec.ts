@@ -48,7 +48,7 @@ describe("Currency List Test", () => {
     expect(CurrencyList).toBeTruthy();
   });
 
-  test("test no currencies", async () => {
+  test("no currencies", async () => {
     const wrapper = mountCurrencyList({
       currencyList: [],
       isLoading: false,
@@ -62,7 +62,7 @@ describe("Currency List Test", () => {
     ).toBeTruthy();
   });
 
-  test("test loading", async () => {
+  test("loading visible", async () => {
     const wrapper = mountCurrencyList({
       currencyList: currencyListMocked,
       isLoading: true,
@@ -72,7 +72,7 @@ describe("Currency List Test", () => {
     ).toBeTruthy();
   });
 
-  test("test listing", async () => {
+  test("listing visible", async () => {
     const wrapper = mountCurrencyList({
       currencyList: currencyListMocked,
       isLoading: false,
@@ -84,7 +84,7 @@ describe("Currency List Test", () => {
     expect(wrapper.find("[data-testid='currency-card']").exists()).toBeTruthy();
   });
 
-  test("test filtering", async () => {
+  test("filter elements", async () => {
     const wrapper = mountCurrencyList({
       currencyList: currencyListMocked,
       isLoading: false,

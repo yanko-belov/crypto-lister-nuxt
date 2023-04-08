@@ -16,7 +16,7 @@ describe("Currency Composable Test", () => {
     store.list = currencyList;
   });
 
-  test("test creation", async () => {
+  test("currency with valid symbol", async () => {
     const store = useCurrencyStore();
     const { symbol, currency, isFavorite, formattedPrice, hasValidCurrency } =
       useCurrency(c.symbol);
@@ -30,7 +30,7 @@ describe("Currency Composable Test", () => {
     expect(hasValidCurrency.value).toBeTruthy();
   });
 
-  test("test favorite toggle", async () => {
+  test("add and remove from favourites", async () => {
     const { isFavorite, toggleFavorite } = useCurrency(c.symbol);
 
     expect(isFavorite.value).toBeFalsy();
@@ -43,7 +43,7 @@ describe("Currency Composable Test", () => {
     toggleFavorite();
   });
 
-  test("test invalid symbol", async () => {
+  test("currency with invalid symbol", async () => {
     const { isFavorite, hasValidCurrency, formattedPrice } =
       useCurrency("something invalid");
 

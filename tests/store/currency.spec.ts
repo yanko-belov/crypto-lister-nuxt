@@ -5,8 +5,6 @@ import { useCurrencyStore } from "~/store/currency";
 import { Mocked, vi } from "vitest";
 import { listResponse } from "~/tests/_data";
 
-// vitest.spyOn(axios, "get").mockResolvedValue(["ssss"]);
-
 vi.mock("axios");
 const mockedAxios = axios as Mocked<typeof axios>;
 
@@ -18,7 +16,7 @@ describe("Currency Store Test", () => {
     mockedAxios.get.mockReset();
   });
 
-  test("loads currency list", async () => {
+  test("load currency list", async () => {
     mockedAxios.get.mockResolvedValueOnce({
       data: listResponse,
     });
@@ -36,7 +34,7 @@ describe("Currency Store Test", () => {
     );
   });
 
-  test("test currency formatter", async () => {
+  test("currency formatter", async () => {
     mockedAxios.get.mockResolvedValueOnce({
       data: listResponse,
     });
@@ -49,7 +47,7 @@ describe("Currency Store Test", () => {
     );
   });
 
-  test("test favorites", async () => {
+  test("add and remove from favourites", async () => {
     mockedAxios.get.mockResolvedValueOnce({
       data: listResponse,
     });
@@ -83,7 +81,7 @@ describe("Currency Store Test", () => {
     expect(store.favorites).toEqual([]);
   });
 
-  test("test fail load", async () => {
+  test("failure of loading", async () => {
     mockedAxios.get.mockRejectedValue({
       data: [],
     });
@@ -92,7 +90,7 @@ describe("Currency Store Test", () => {
     expect(store.hasError).toBeTruthy();
   });
 
-  test("test loading state", async () => {
+  test("loading state", async () => {
     mockedAxios.get.mockRejectedValue({
       data: [],
     });
