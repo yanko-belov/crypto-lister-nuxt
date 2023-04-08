@@ -1,7 +1,5 @@
 import { createError, sendError } from "h3";
 import type { H3Event } from "h3";
-import type { IListData } from "~/server/crypto-api/types";
-import { CURRENCIES_WHITELIST } from "~/types";
 
 export const API_URL = "https://pro-api.coinmarketcap.com";
 
