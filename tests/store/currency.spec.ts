@@ -47,7 +47,7 @@ describe("Currency Store Test", () => {
     );
   });
 
-  test("add and remove from favourites", async () => {
+  test("add and remove from favorites", async () => {
     mockedAxios.get.mockResolvedValueOnce({
       data: listResponse,
     });
@@ -68,13 +68,13 @@ describe("Currency Store Test", () => {
     store.addToFavorites(currency.symbol);
     expect(store.favorites.length).toEqual(1);
     expect(store.favorites).toEqual([currency.symbol]);
-    expect(store.favouritesList).toEqual([currency]);
+    expect(store.favoritesList).toEqual([currency]);
 
     // remove invalid value form favorites
     store.removeFromFavorites("dasdasda");
     expect(store.favorites.length).toEqual(1);
     expect(store.favorites).toEqual([currency.symbol]);
-    expect(store.favouritesList).toEqual([currency]);
+    expect(store.favoritesList).toEqual([currency]);
 
     store.removeFromFavorites(currency.symbol);
     expect(store.favorites.length).toEqual(0);

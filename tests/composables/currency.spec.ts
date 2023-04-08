@@ -30,7 +30,7 @@ describe("Currency Composable Test", () => {
     expect(hasValidCurrency.value).toBeTruthy();
   });
 
-  test("add and remove from favourites", async () => {
+  test("add and remove from favorites", async () => {
     const { isFavorite, toggleFavorite } = useCurrency(c.symbol);
 
     expect(isFavorite.value).toBeFalsy();

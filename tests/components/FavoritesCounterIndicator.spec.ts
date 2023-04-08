@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import FavouritesCounterIndicator from "~/components/FavouritesCounterIndicator.vue";
+import FavoritesCounterIndicator from "~/components/FavoritesCounterIndicator.vue";
 import { currencyList } from "~/tests/_data";
 import { createTestingPinia } from "@pinia/testing";
 import { useCurrencyStore } from "~/store/currency";
@@ -8,11 +8,11 @@ import { nextTick } from "vue";
 
 const currency = currencyList[0];
 
-const mountFavouritesCounterIndicator = () => {
-  return mount(FavouritesCounterIndicator);
+const mountFavoritesCounterIndicator = () => {
+  return mount(FavoritesCounterIndicator);
 };
 
-describe("Favourites Counter Indicator Test", () => {
+describe("Favorites Counter Indicator Test", () => {
   let store = null;
 
   beforeEach(() => {
@@ -23,11 +23,11 @@ describe("Favourites Counter Indicator Test", () => {
   });
 
   test("component exist", async () => {
-    expect(FavouritesCounterIndicator).toBeTruthy();
+    expect(FavoritesCounterIndicator).toBeTruthy();
   });
 
-  test("add and remove from favourites", async () => {
-    const wrapper = mountFavouritesCounterIndicator();
+  test("add and remove from favorites", async () => {
+    const wrapper = mountFavoritesCounterIndicator();
     const store = useCurrencyStore();
 
     // initial state

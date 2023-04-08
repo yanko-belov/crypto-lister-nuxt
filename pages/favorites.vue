@@ -1,11 +1,11 @@
 <template>
   <h1 class="mb-4 flex items-center gap-2 text-3xl font-bold md:mt-4">
     <span>Favorites</span>
-    <FavouritesCounterIndicator />
+    <FavoritesCounterIndicator />
   </h1>
   <CurrencyList
     :is-loading="store.isLoading"
-    :currency-list="store.favouritesList"
+    :currency-list="store.favoritesList"
   >
     <template #no-data-header>Your Favorites List is Currently Empty</template>
     <template #cta>

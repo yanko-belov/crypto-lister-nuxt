@@ -67,7 +67,7 @@ describe("Currency Overview Test", () => {
     ).toBeGreaterThanOrEqual(currency.tags.length);
   });
 
-  test("add and remove from favourites", async () => {
+  test("add and remove from favorites", async () => {
     const wrapper = mountCurrencyOverview();
     const store = useCurrencyStore();
 

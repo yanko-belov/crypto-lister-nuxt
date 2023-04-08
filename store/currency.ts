@@ -24,7 +24,7 @@ export const useCurrencyStore = defineStore("currency", {
         style: "currency",
         currency: "USD",
       }),
-    favouritesList: (state) =>
+    favoritesList: (state) =>
       state.list.filter((currency) =>
         state.favorites.includes(currency.symbol)
       ),
