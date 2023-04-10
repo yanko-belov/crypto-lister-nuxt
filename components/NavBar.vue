@@ -35,7 +35,7 @@
             >
               <div class="flex gap-2">
                 <span>Favorites</span>
-                <FavouritesCounterIndicator />
+                <FavoritesCounterIndicator />
               </div>
             </NuxtLink>
           </li>
