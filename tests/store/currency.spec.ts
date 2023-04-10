@@ -1,4 +1,4 @@
-import axios from "axios";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { setActivePinia } from "pinia";
 import { createTestingPinia } from "@pinia/testing";
 import { useCurrencyStore } from "~/store/currency";
