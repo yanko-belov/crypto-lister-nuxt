@@ -2,8 +2,17 @@
 <img src="./public/img/logo.svg" alt="CryptoLister" width=70 />
 </p>
 <h3 align="center">CryptoLister</h3>
+<p align="center">
+<a href="https://codecov.io/github/yanko-belov/crypto-lister-nuxt" > 
+ <img src="https://codecov.io/github/yanko-belov/crypto-lister-nuxt/branch/main/graph/badge.svg?token=MLY3I4WUHE"/> 
+</a><a href="https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/e2e-tests.js.yml" > 
+ <img src="https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/e2e-tests.js.yml/badge.svg" alt="End-to-end Tests"/> 
+</a>
+<a href="https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/unit-tests.js.yml" > 
+ <img src="https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/unit-tests.js.yml/badge.svg" alt="Unit tests"/> 
+</a>
+</p>
 <p align="center">Explore the world of cryptocurrencies with this innovative demo application. Effortlessly browse, preview and choose your favorite cryptocurrencies!</p>
-
 
 <p align="center">
 <a href="https://nuxt.com/"><img src="https://img.shields.io/badge/Nuxt.js-%23ffffff.svg?style=for-the-badge&logo=nuxt.js&logoColor=00DC82" alt="Nuxt.js"></a>
