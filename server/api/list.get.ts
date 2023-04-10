@@ -1,8 +1,28 @@
 import { listCurrencies, handleApiError } from "~/server/crypto-api";
-import { CURRENCIES_WHITELIST } from "~/types";
 import type { H3Event } from "h3";
 import type { IListData } from "~/server/crypto-api/types";
 import type { ICurrency } from "~/types";
+
+export const CURRENCIES_WHITELIST: string[] = [
+  "ada",
+  "avax",
+  "bnb",
+  "btc",
+  "busd",
+  "dai",
+  "doge",
+  "dot",
+  "eth",
+  "matic",
+  "shib",
+  "sol",
+  "trx",
+  "uni",
+  "usdc",
+  "usdt",
+  "wbtc",
+  "xrp",
+];
 
 const convertListCurrenciesData = (dataJson: IListData): ICurrency[] => {
   // Filter out currencies that are not in the whitelist
