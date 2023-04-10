@@ -90,14 +90,26 @@ describe("Currency List Test", () => {
       isLoading: false,
     });
 
-    wrapper.vm.filter = "btc";
+    expect(wrapper.findAll("[data-testid='currency-card']").length).toBe(
+      currencyListMocked.length
+    );
+    await wrapper.find("[data-testid='filter-input']").setValue("btc");
     await nextTick();
+    expect(wrapper.vm.filter).toBe("btc");
     expect(
       wrapper.findAll("[data-testid='currency-card']").length
     ).toBeGreaterThanOrEqual(1);
 
-    wrapper.vm.filter = "btc123123123123";
+    await wrapper
+      .find("[data-testid='filter-input']")
+      .setValue("btc123123123123");
+    expect(wrapper.vm.filter).toBe("btc123123123123");
     await nextTick();
     expect(wrapper.findAll("[data-testid='currency-card']").length).toBe(0);
+    await wrapper.find("[data-testid='clear-filter']").trigger("click");
+    expect(wrapper.vm.filter).toBe("");
+    expect(wrapper.findAll("[data-testid='currency-card']").length).toBe(
+      currencyListMocked.length
+    );
   });
 });
