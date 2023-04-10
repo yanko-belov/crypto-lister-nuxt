@@ -68,7 +68,7 @@ describe("Currency List Test", () => {
       isLoading: true,
     });
     expect(
-      wrapper.find("[data-testid='currency-list-loader']").exists()
+      wrapper.find("[data-testid='currency-list-container-loader']").exists()
     ).toBeTruthy();
   });
 
