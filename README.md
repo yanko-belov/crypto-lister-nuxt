@@ -3,9 +3,10 @@
 </p>
 <h3 align="center">CryptoLister</h3>
 <p align="center">
-<a href="https://codecov.io/github/yanko-belov/crypto-lister-nuxt" > 
- <img src="https://codecov.io/github/yanko-belov/crypto-lister-nuxt/branch/main/graph/badge.svg?token=MLY3I4WUHE"/> 
-</a><a href="https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/e2e-tests.js.yml" > 
+<a href="https://codecov.io/gh/yanko-belov/crypto-lister-nuxt" >
+<img src="https://codecov.io/gh/yanko-belov/crypto-lister-nuxt/branch/main/graph/badge.svg?token=MLY3I4WUHE" alt="CodeCov"/>
+</a>
+<a href="https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/e2e-tests.js.yml" > 
  <img src="https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/e2e-tests.js.yml/badge.svg" alt="End-to-end Tests"/> 
 </a>
 <a href="https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/unit-tests.js.yml" > 
