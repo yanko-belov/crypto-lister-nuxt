@@ -13,6 +13,7 @@
         <button
           type="button"
           class="mt-3 rounded-lg border border-red-700 px-5 py-2.5 text-center text-sm font-medium text-red-700 hover:bg-red-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-red-300"
+          data-testid="no-favourites-yet-cta"
         >
           Find Favorites
         </button>

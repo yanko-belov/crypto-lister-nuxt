@@ -1,5 +1,5 @@
 <template>
-  <div class="animate-pulse">
+  <div class="animate-pulse" data-testid="currency-overview-loader">
     <div class="mb-4 items-center justify-between sm:flex md:mt-6">
       <div class="flex items-center gap-3">
         <img

@@ -3,7 +3,7 @@
     <div
       class="container mx-auto flex flex-wrap items-center justify-between p-4"
     >
-      <NuxtLink to="/" class="flex items-center">
+      <NuxtLink to="/" class="flex items-center" data-testid="nav-logo-link">
         <img src="/img/logo.svg" class="mr-3 h-8" alt="CryptoLister" />
         <span class="self-center whitespace-nowrap text-2xl font-semibold">
           CryptoLister
@@ -12,6 +12,7 @@
       <button
         type="button"
         class="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
+        data-testid="nav-burger-menu-button"
         @click="toggleMenu"
       >
         <span class="sr-only">Open main menu</span>
@@ -22,10 +23,16 @@
           class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0"
         >
           <li>
-            <NuxtLink to="/" class="nav-link"> Home </NuxtLink>
+            <NuxtLink to="/" class="nav-link" data-testid="nav-home-link">
+              Home
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/favorites" class="nav-link">
+            <NuxtLink
+              to="/favorites"
+              class="nav-link"
+              data-testid="nav-favorites-link"
+            >
               <div class="flex gap-2">
                 <span>Favorites</span>
                 <FavouritesCounterIndicator />
