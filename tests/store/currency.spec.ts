@@ -2,30 +2,30 @@ import axios from "axios";
 import { setActivePinia } from "pinia";
 import { createTestingPinia } from "@pinia/testing";
 import { useCurrencyStore } from "~/store/currency";
-import { Mocked, vi } from "vitest";
+import { vi } from "vitest";
 import { listResponse } from "~/tests/_data";
 
-vi.mock("axios");
-const mockedAxios = axios as Mocked<typeof axios>;
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+global.$fetch = vi.fn();
+const mockedFetch = vi.mocked(global.$fetch, true);
 
 describe("Currency Store Test", () => {
   beforeEach(() => {
     setActivePinia(
       createTestingPinia({ stubActions: false, createSpy: vi.fn })
     );
-    mockedAxios.get.mockReset();
+    mockedFetch.mockReset();
   });
 
   test("load currency list", async () => {
-    mockedAxios.get.mockResolvedValueOnce({
-      data: listResponse,
-    });
+    mockedFetch.mockResolvedValueOnce(listResponse);
     const store = useCurrencyStore();
 
     const currency = listResponse.data[0];
     await store.loadList();
-    expect(axios.get).toHaveBeenCalledTimes(1);
-    expect(mockedAxios.get).toHaveBeenCalledWith("/api/list");
+    expect(mockedFetch).toHaveBeenCalledTimes(1);
+    expect(mockedFetch).toHaveBeenCalledWith("/api/list");
     expect(store.list).toEqual(listResponse.data);
     expect(store.hasError).toBeFalsy();
     expect(store.isLoading).toBeFalsy();
@@ -35,9 +35,7 @@ describe("Currency Store Test", () => {
   });
 
   test("currency formatter", async () => {
-    mockedAxios.get.mockResolvedValueOnce({
-      data: listResponse,
-    });
+    mockedFetch.mockResolvedValueOnce(listResponse);
     const store = useCurrencyStore();
 
     const currency = listResponse.data[0];
@@ -48,9 +46,7 @@ describe("Currency Store Test", () => {
   });
 
   test("add and remove from favorites", async () => {
-    mockedAxios.get.mockResolvedValueOnce({
-      data: listResponse,
-    });
+    mockedFetch.mockResolvedValueOnce(listResponse);
     const store = useCurrencyStore();
 
     const currency = listResponse.data[0];
@@ -82,7 +78,7 @@ describe("Currency Store Test", () => {
   });
 
   test("failure of loading", async () => {
-    mockedAxios.get.mockRejectedValue({
+    mockedFetch.mockRejectedValue({
       data: [],
     });
     const store = useCurrencyStore();
@@ -91,7 +87,7 @@ describe("Currency Store Test", () => {
   });
 
   test("loading state", async () => {
-    mockedAxios.get.mockRejectedValue({
+    mockedFetch.mockRejectedValue({
       data: [],
     });
     const store = useCurrencyStore();

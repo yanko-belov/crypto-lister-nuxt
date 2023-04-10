@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import type { ICurrency } from "~/types";
-import axios from "axios";
 
 interface ICurrencyState {
   list: ICurrency[];
@@ -35,10 +34,9 @@ export const useCurrencyStore = defineStore("currency", {
       this.isLoading = true;
       this.hasError = false;
       try {
-        const response = await axios.get("/api/list");
-        const data = response.data;
-        this.list = data.data as ICurrency[];
-        this.lastUpdated = new Date(data.timestamp);
+        const response = await $fetch("/api/list");
+        this.list = response.data as ICurrency[];
+        this.lastUpdated = new Date(response.timestamp);
       } catch (error) {
         this.hasError = true;
       } finally {

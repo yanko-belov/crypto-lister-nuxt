@@ -12,24 +12,3 @@ export interface ICurrency {
   tags: string[];
   circulating_supply: number;
 }
-
-export const CURRENCIES_WHITELIST: string[] = [
-  "ada",
-  "avax",
-  "bnb",
-  "btc",
-  "busd",
-  "dai",
-  "doge",
-  "dot",
-  "eth",
-  "matic",
-  "shib",
-  "sol",
-  "trx",
-  "uni",
-  "usdc",
-  "usdt",
-  "wbtc",
-  "xrp",
-];
