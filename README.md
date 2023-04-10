@@ -69,7 +69,7 @@ To run this project locally, you will need to follow these steps:
 This project includes the following tests:
 
 - End-to-end (e2e) tests using Cypress 
-- Unit tests using Vitest [![Unit tests](https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/node.js.yml/badge.svg)](https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/unit-tests.js.yml)
+- Unit tests using Vitest [![Unit tests](https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/unit-tests.js.yml/badge.svg)](https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/unit-tests.js.yml)
 
 ### Run Unit Tests
 
