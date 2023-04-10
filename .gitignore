@@ -10,3 +10,5 @@ dist
 .DS_Store
 .idea
 auto-imports.d.ts
+cypress/videos
+cypress/screenshots
