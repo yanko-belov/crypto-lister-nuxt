@@ -4,9 +4,9 @@ import { listResponse } from "~/tests/_data";
 
 describe("List page listing and filtering", () => {
   beforeEach(() => {
+    cy.intercept("GET", "api/list", listResponse);
     cy.visit("/");
 
-    cy.intercept("GET", "api/list", listResponse);
     cy.get("[data-testid='filter-input']").as("filterInput");
     cy.get("[data-testid='currency-card']").as("currencyCard");
     cy.get("[data-testid='favorites-counter']").as("favoritesCounter");
@@ -98,12 +98,11 @@ describe("List page loading", () => {
 
 describe("List page no data", () => {
   beforeEach(() => {
-    cy.visit("/");
-
     cy.intercept("GET", "api/list", {
       data: [],
       timestamp: listResponse.timestamp,
     });
+    cy.visit("/");
   });
 
   it("should show data not found", () => {

@@ -4,8 +4,8 @@ import { listResponse } from "~/tests/_data";
 
 describe("Navigation mobile", () => {
   beforeEach(() => {
-    cy.visit("/");
     cy.intercept("GET", "api/list", listResponse).as("listCurrencies");
+    cy.visit("/");
     cy.get("[data-testid='nav-logo-link']").as("logoLink");
     cy.get("[data-testid='nav-burger-menu-button']").as("burgerMenuButton");
     cy.get("[data-testid='nav-home-link']").as("homeLink");

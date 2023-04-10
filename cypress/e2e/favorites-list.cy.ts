@@ -4,8 +4,8 @@ import { listResponse } from "~/tests/_data";
 
 describe("Favorites List page listing and filtering", () => {
   beforeEach(() => {
-    cy.visit("/");
     cy.intercept("GET", "api/list", listResponse);
+    cy.visit("/");
     cy.get("[data-testid='filter-input']").as("filterInput");
     cy.get("[data-testid='currency-card']").as("currencyCard");
     cy.get("[data-testid='favorites-counter']").as("favoritesCounter");

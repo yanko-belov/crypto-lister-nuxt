@@ -5,10 +5,10 @@ import { formatCurrencyCompact } from "~/helpers/utils";
 
 describe("Overview page", () => {
   it("should show overview", () => {
+    cy.intercept("GET", "api/list", listResponse);
     cy.visit(`/currency/${listResponse.data[0].symbol}`);
 
     const currency = listResponse.data[0];
-    cy.intercept("GET", "api/list", listResponse);
     cy.get("[data-testid='logo']");
     cy.get("[data-testid='name']");
     cy.get("[data-testid='toggle-favorite-button']");

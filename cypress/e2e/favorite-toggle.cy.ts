@@ -4,9 +4,9 @@ import { listResponse } from "~/tests/_data";
 
 describe("Add, remove and count favorites", () => {
   beforeEach(() => {
+    cy.intercept("GET", "api/list", listResponse);
     cy.visit("/");
 
-    cy.intercept("GET", "api/list", listResponse);
     cy.get("[data-testid='toggle-favorite-button']").as("favoriteToggleButton");
     cy.get("[data-testid='currency-card']").as("currencyCard");
     cy.get("[data-testid='favorites-counter']").as("favoritesCounter");
