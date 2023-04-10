@@ -19,6 +19,7 @@
 <a href="https://eslint.org/"><img src="https://img.shields.io/badge/ESLint-%234B32C3.svg?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint"></a>
 <a href="https://prettier.io/"><img src="https://img.shields.io/badge/Prettier-%231A2B34.svg?style=for-the-badge&logo=prettier&logoColor=white" alt="Prettier"></a>
 <a href="https://stylelint.io/"><img src="https://img.shields.io/badge/StyleLint-%236B3E99.svg?style=for-the-badge&logo=stylelint&logoColor=white" alt="StyleLint" /></a>
+<a href="https://github.com/actions"><img src="https://img.shields.io/badge/GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHib Actions" /></a>
 </p>
 <br />
 
@@ -52,6 +53,7 @@ This project was built using the following technologies:
 - **ESLint**
 - **Prettier**
 - **StyleLint**
+- **CI/CD with GitHub Actions**
 
 ## Installation
 
@@ -68,7 +70,7 @@ To run this project locally, you will need to follow these steps:
 
 This project includes the following tests:
 
-- End-to-end (e2e) tests using Cypress 
+- End-to-end (e2e) tests using Cypress [![End-to-end Tests](https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/e2e-tests.js.yml/badge.svg)](https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/e2e-tests.js.yml)
 - Unit tests using Vitest [![Unit tests](https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/unit-tests.js.yml/badge.svg)](https://github.com/yanko-belov/crypto-lister-nuxt/actions/workflows/unit-tests.js.yml)
 
 ### Run Unit Tests
