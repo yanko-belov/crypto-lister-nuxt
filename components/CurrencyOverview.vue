@@ -40,13 +40,13 @@
     <div class="rounded-lg bg-white p-6 shadow-xl">
       <h2 class="mb-2 text-lg font-semibold text-gray-800">Market Cap</h2>
       <p class="text-2xl font-bold text-gray-800" data-testid="market-cap">
-        {{ formatter.format(currency.quote.USD.market_cap) }}
+        {{ formatCurrencyCompact(currency.quote.USD.market_cap) }}
       </p>
     </div>
     <div class="rounded-lg bg-white p-6 shadow-xl">
       <h2 class="mb-2 text-lg font-semibold text-gray-800">24h Volume</h2>
       <p class="text-2xl font-bold text-gray-800" data-testid="volume-24h">
-        {{ formatter.format(currency.quote.USD.volume_24h) }}
+        {{ formatCurrencyCompact(currency.quote.USD.volume_24h) }}
       </p>
     </div>
     <div class="rounded-lg bg-white p-6 shadow-xl">
@@ -54,8 +54,8 @@
         Circulating Supply
       </h2>
       <p class="text-2xl font-bold text-gray-800" data-testid="current-supply">
-        {{ formatter.format(currency.circulating_supply) }}
-        {{ currency.symbol }}
+        {{ formatCurrencyCompact(currency.circulating_supply) }}
+        {{ currency.symbol.toUpperCase() }}
       </p>
     </div>
   </div>
@@ -76,14 +76,9 @@
 
 <script lang="ts" setup>
 import { useCurrency } from "~/composables/currency";
+import { formatCurrencyCompact } from "~/helpers/utils";
 const props = defineProps<{ symbol: string }>();
 
 const { symbol, toggleFavorite, isFavorite, formattedPrice, currency } =
   useCurrency(props.symbol);
-
-const formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  notation: "compact",
-  currency: "USD",
-});
 </script>

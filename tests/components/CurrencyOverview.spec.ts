@@ -5,6 +5,7 @@ import { currencyList } from "~/tests/_data";
 import { createTestingPinia } from "@pinia/testing";
 import { useCurrencyStore } from "~/store/currency";
 import { setActivePinia } from "pinia";
+import { formatCurrencyCompact } from "~/helpers/utils";
 
 const currency = currencyList[0];
 const mountCurrencyOverview = () => {
@@ -33,12 +34,6 @@ describe("Currency Overview Test", () => {
     const wrapper = mountCurrencyOverview();
     const store = useCurrencyStore();
 
-    const formatter = new Intl.NumberFormat("en-US", {
-      style: "currency",
-      notation: "compact",
-      currency: "USD",
-    });
-
     expect(wrapper.get("[data-testid='logo']").attributes().src).toBe(
       `/img/svg-crypto-logos/${currency.symbol.toLowerCase()}.svg`
     );
@@ -54,13 +49,15 @@ describe("Currency Overview Test", () => {
       store.getPriceFormatted(currency)
     );
     expect(wrapper.get("[data-testid='market-cap']").text()).toBe(
-      formatter.format(currency.quote.USD.market_cap)
+      formatCurrencyCompact(currency.quote.USD.market_cap)
     );
     expect(wrapper.get("[data-testid='volume-24h']").text()).toBe(
-      formatter.format(currency.quote.USD.volume_24h)
+      formatCurrencyCompact(currency.quote.USD.volume_24h)
     );
     expect(wrapper.get("[data-testid='current-supply']").text()).toBe(
-      `${formatter.format(currency.circulating_supply)} ${currency.symbol}`
+      `${formatCurrencyCompact(
+        currency.circulating_supply
+      )} ${currency.symbol.toUpperCase()}`
     );
     expect(
       wrapper.findAll("[data-testid='tag']").length
