@@ -27,8 +27,14 @@
 <img src="./screenshots/demo.gif" alt="CryptoLister Demo" />
 </p>
 
-<h1 align="center"><a href="https://crypto-loader-nuxt.netlify.app/">Live Demo</a></h1>
+<h1 align="center">
+<a href="https://crypto-loader-nuxt.netlify.app/">Live Demo</a>
 
+</h1>
+
+<p align="center">
+    <a href="https://app.netlify.com/sites/crypto-loader-nuxt/deploys"><img src="https://api.netlify.com/api/v1/badges/dc18ec25-2dc9-4fdf-9c62-e207dcdd66df/deploy-status" alt="Netlify Status" /></a>
+</p>
 
 # About
 
