@@ -1,6 +1,6 @@
 {
   "name": "crypto-lister",
-  "description": "CryltoLister is a demo app.",
+  "description": "CryptoLister is a demo app.",
   "author": "Yanko Belov",
   "private": true,
   "scripts": {
