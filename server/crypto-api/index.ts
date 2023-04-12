@@ -8,7 +8,6 @@ const callApi = (endpoint: string, options: RequestInit = {}) =>
     ...options,
     headers: {
       "X-CMC_PRO_API_KEY": import.meta.env.VITE_NUXT_CRYPTO_API_KEY as string,
-      "Access-Control-Allow-Origin": "*",
       ...options?.headers,
     },
   });
