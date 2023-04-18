@@ -48,8 +48,6 @@
 
 # About
 
-This project serves as a testament to my proficiency as both a front-end and full-stack web developer. It demonstrates my expertise in various technologies and showcases my ability to create polished and functional web applications.
-
 You can contact me at [belov.yanko@gmail.com](mailto:belov.yanko@gmail.com).
 
 ## Technologies Used
