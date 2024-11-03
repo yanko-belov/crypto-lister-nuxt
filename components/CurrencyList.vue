@@ -1,5 +1,5 @@
 <template>
-  <CurrencyListLoader v-if="props.isLoading" />
+  <CurrencyListLoader v-if="isLoading" />
   <template v-else-if="hasCurrencies || !isFilterEmpty">
     <FilterInput v-model="filter" />
     <div
@@ -16,7 +16,7 @@
     </div>
   </template>
   <div
-    v-if="!hasCurrencies && !props.isLoading"
+    v-if="!hasCurrencies && !isLoading"
     data-testid="missing-data"
     class="flex h-full flex-col items-center justify-center"
   >
