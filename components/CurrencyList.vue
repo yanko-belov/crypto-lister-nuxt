@@ -48,8 +48,8 @@
 
 <script lang="ts" setup>
 import type { ICurrency } from "~/types";
-const filter = ref("");
-const isFilterEmpty = computed(() => filter.value.length === 0);
+const filter = ref<string>("");
+const isFilterEmpty = computed<boolean>(() => filter.value.length === 0);
 const clearFilter = () => (filter.value = "");
 
 const props = withDefaults(
@@ -60,9 +60,9 @@ const props = withDefaults(
   }
 );
 
-const hasCurrencies = computed(() => currencyListFiltered.value.length > 0);
+const hasCurrencies = computed<boolean>(() => currencyListFiltered.value.length > 0);
 
-const currencyListFiltered = computed(() =>
+const currencyListFiltered = computed<ICurrency[]>(() =>
   props.currencyList.filter((currency) => {
     const name = currency.name.toLowerCase();
     const filterValue = filter.value.toLowerCase();

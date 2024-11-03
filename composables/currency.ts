@@ -3,19 +3,19 @@ import { useCurrencyStore } from "~/store/currency";
 export function useCurrency(symbol: string) {
   const store = useCurrencyStore();
 
-  const isFavorite = computed(() => store.favorites.includes(symbol));
+  const isFavorite = computed<boolean>(() => store.favorites.includes(symbol));
   const toggleFavorite = () =>
     isFavorite.value
       ? store.removeFromFavorites(symbol)
       : store.addToFavorites(symbol);
 
-  const currency = computed(
+  const currency = computed<ICurrency>(
     () => store.list.find((currency) => currency.symbol === symbol) as ICurrency
   );
 
-  const hasValidCurrency = computed(() => currency.value !== undefined);
+  const hasValidCurrency = computed<boolean>(() => currency.value !== undefined);
 
-  const formattedPrice = computed(() =>
+  const formattedPrice = computed<string>(() =>
     hasValidCurrency.value
       ? store.getPriceFormatted(currency.value as ICurrency)
       : ""

@@ -24,8 +24,8 @@ import { useCurrencyStore } from "~/store/currency";
 
 const store = useCurrencyStore();
 const router = useRouter();
-const routesSymbol = computed(
-  (): string => (router.currentRoute.value.params?.symbol as string) || ""
+const routesSymbol = computed<boolean>(
+  () => (router.currentRoute.value.params?.symbol || "")
 );
 
 const { hasValidCurrency, symbol } = useCurrency(routesSymbol.value);

@@ -48,7 +48,7 @@
 <script lang="ts" setup>
 const route = useRoute();
 
-const isMenuOpen = ref(false);
+const isMenuOpen = ref<boolean>(false);
 const toggleMenu = () => (isMenuOpen.value = !isMenuOpen.value);
 const closeMenu = () => (isMenuOpen.value = false);
 
